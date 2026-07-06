@@ -2,16 +2,15 @@
 
 echo "display services"
 
-aws ec2 describe-instances
-
+systemctl list-units --type=service --state=running --no-pager
+echo 
 echo "cpu usage"
- 
-top
+mpstat
 
+echo
 echo "cpu memory usage"
-
 free -g
-echo "disk usage"
 
+echo "disk usage"
 df -h
 
